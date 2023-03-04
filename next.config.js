@@ -3,6 +3,11 @@ const { createSecureHeaders } = require("next-secure-headers");
 
 module.exports = {
   reactStrictMode: true,
+  experimental: {
+    fontLoaders: [
+      { loader: "@next/font/google", options: { subsets: ["latin"] } },
+    ],
+  },
   async headers() {
     return [
       {
