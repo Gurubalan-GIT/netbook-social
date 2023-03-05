@@ -19,13 +19,21 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-    colors: {
-      blue: "#217BF4",
-    },
     extend: {
-      grey: {
-        700: "#2B2B39",
-        800: "#20202D",
+      colors: {
+        blue: {
+          200: "#E2EEFF",
+          800: "#217BF4",
+          950: "#0A093D",
+        },
+        grey: {
+          0: "#fff",
+          100: "#fafafa",
+          200: "#eaeaea",
+          300: "#656464",
+          700: "#2B2B39",
+          800: "#20202D",
+        },
       },
     },
     fontFamily: {

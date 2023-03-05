@@ -1,0 +1,44 @@
+.navbar {
+  @apply h-[90px] flex justify-between w-full px-[135px] items-center fixed top-0 border-blue-800 border-[1px] border-solid border-opacity-10;
+  .navLeft {
+    display: flex;
+    justify-content: space-between;
+    .navLinks {
+      width: 306px;
+      margin-left: 72px;
+      display: flex;
+      align-items: center;
+      ul {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          font-weight: 600;
+          font-size: 14px;
+          @apply text-grey-300 hover:text-grey-700 cursor-pointer;
+        }
+      }
+    }
+  }
+  .navRight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input {
+      width: 105px;
+      border: unset;
+      border-bottom: 1px solid #e5e5e5;
+      margin-right: 40px;
+      background-color: unset;
+      outline: none;
+      padding: 4px;
+      ::placeholder {
+        color: #686868;
+        font-weight: 400;
+        font-size: 12px;
+      }
+    }
+  }
+}
