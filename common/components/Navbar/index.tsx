@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent, useEffect, useState } from "react";
+import Button from "../Button";
 import classes from "./Navbar.module.scss";
 
 const Navbar: FunctionComponent = () => {
@@ -42,7 +43,7 @@ const Navbar: FunctionComponent = () => {
       </div>
       <div className={classes.navRight}>
         <input placeholder="Search here" />
-        <button className="btn-primary">Login</button>
+        <Button variant="primary">Login</Button>
       </div>
     </nav>
   );

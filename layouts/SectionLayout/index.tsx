@@ -6,7 +6,16 @@ const SectionLayout: FunctionComponent<Props> = ({
   children,
   className = "",
 }) => {
-  return <div className={classNames("px-[135px]", className)}>{children}</div>;
+  return (
+    <div
+      className={classNames(
+        "px-[135px] flex items-center justify-center",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default SectionLayout;
