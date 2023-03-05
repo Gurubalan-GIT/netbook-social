@@ -20,3 +20,18 @@ export const navLinks = [
     outLink: "/events",
   },
 ];
+
+export const featuresProvided = [
+  {
+    id: 1,
+    name: "Groups",
+  },
+  {
+    id: 2,
+    name: "Messages",
+  },
+  {
+    id: 3,
+    name: "Share",
+  },
+];

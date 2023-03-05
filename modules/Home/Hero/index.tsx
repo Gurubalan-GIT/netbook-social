@@ -9,9 +9,9 @@ const Hero = () => {
     <SectionLayout className={classes.heroContainer}>
       <div className="flex flex-col w-1/2 pr-[12px]">
         <Pill>Netbook Community</Pill>
-        <div className="text-[56px] font-bold text-blue-950 leading-[66px] py-[20px]">
+        <h2 className="text-[56px] text-blue-950 leading-[66px] py-[20px]">
           Your Solutions For Community!
-        </div>
+        </h2>
         <div className="text-[18px] font-normal">
           More than 2 billion people in over countries use Netbook to stay in
           touch with friends & family.

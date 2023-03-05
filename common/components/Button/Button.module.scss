@@ -1,0 +1,28 @@
+.btnPrimary {
+  @apply bg-blue-800;
+  box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+  border-radius: 14px;
+  color: white;
+  padding: 18px 44px;
+  font-weight: 600;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    @apply bg-transparent text-blue-800 border-blue-800 border-solid border-[1px];
+  }
+}
+
+.btnOutlined {
+  @apply bg-transparent text-blue-800 border-blue-800 border-solid border-[1px];
+  border-radius: 14px;
+  padding: 18px 44px;
+  font-weight: 600;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    @apply bg-blue-800 text-white;
+  }
+}

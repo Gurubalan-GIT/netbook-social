@@ -1,0 +1,24 @@
+.aboutUsContainer {
+  height: 672px;
+  .featureContainer {
+    .featureList {
+      list-style: none;
+      padding-left: 20px;
+      li {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 20%;
+          content: "";
+          width: 8px;
+          height: 8px;
+          left: -20px;
+          border-radius: 50%;
+          box-shadow: 0 0 0 5px #e2eeff;
+          @apply bg-blue-800;
+        }
+        @apply text-blue-950 leading-[18px] text-lg font-medium mt-4;
+      }
+    }
+  }
+}
