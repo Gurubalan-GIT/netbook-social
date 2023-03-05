@@ -27,7 +27,8 @@
       "@logos/*": ["public/assets/logos/*"],
       "@modules/*": ["modules/*"],
       "@common/*": ["common/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@vectors/*": ["public/assets/vectors/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
