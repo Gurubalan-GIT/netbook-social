@@ -1,5 +1,6 @@
 .navbar {
   @apply h-[90px] flex justify-between w-full px-[135px] items-center fixed top-0 border-blue-800 border-[1px] border-solid border-opacity-10;
+  z-index: 99;
   .navLeft {
     display: flex;
     justify-content: space-between;

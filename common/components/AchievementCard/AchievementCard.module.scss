@@ -1,0 +1,14 @@
+.achievementCardContainer {
+  @apply rounded-[14px] border-[1px] border-solid border-[#5E5E5E28];
+  padding: 44px 18px 44px 44px;
+  max-width: 336px;
+  margin-right: 24px;
+  .subTitleIcon {
+    filter: drop-shadow(0px 4px 12px rgba(164, 164, 164, 0.25));
+  }
+  &:hover {
+    @apply bg-white;
+    box-shadow: 0px 26px 49px rgba(146, 165, 184, 0.14);
+    border: none;
+  }
+}

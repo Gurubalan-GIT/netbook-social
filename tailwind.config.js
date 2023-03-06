@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 const { fontFamily } = defaultTheme;
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
@@ -26,11 +27,16 @@ module.exports = {
           800: "#217BF4",
           950: "#0A093D",
         },
+        gray: {
+          300: "#8C8C8C",
+        },
         grey: {
           0: "#fff",
           100: "#fafafa",
           200: "#eaeaea",
+          250: "#5D5B70",
           300: "#656464",
+          400: "#4A4A56",
           700: "#2B2B39",
           800: "#20202D",
         },
@@ -40,7 +46,14 @@ module.exports = {
       sans: ["Inter", ...fontFamily.sans],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    plugin(function ({ addVariant }) {
+      addVariant("optional", "&:optional");
+      addVariant("group-optional", ":merge(.group):optional &");
+      addVariant("peer-optional", ":merge(.peer):optional ~ &");
+    }),
+  ],
   corePlugins: {
     preflight: false,
   },
