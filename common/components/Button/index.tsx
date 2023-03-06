@@ -20,7 +20,9 @@ const Button: FunctionComponent<Props> = (props) => {
   };
 
   return (
-    <button className={classNames(getVariantClass(), className)}>
+    <button
+      className={classNames(getVariantClass(), classes.btnBase, className)}
+    >
       {children}
     </button>
   );

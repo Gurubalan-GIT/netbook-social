@@ -1,3 +1,4 @@
+import Footer from "@common/components/Footer";
 import Navbar from "@common/components/Navbar";
 import { Inter as inter } from "next/font/google";
 import Head from "next/head";
@@ -20,6 +21,7 @@ const RootLayout: FunctionComponent<Props> = ({ children }) => {
         <div className="w-full h-full min-h-screen flex flex-col">
           <Navbar />
           {children}
+          <Footer />
         </div>
       </main>
     </Fragment>
