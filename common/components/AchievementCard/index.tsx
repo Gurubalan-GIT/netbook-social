@@ -45,16 +45,16 @@ const AchievementCard: FunctionComponent<Props> = (props) => {
             >
               <path
                 d="M1.5625 5H8.4375"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="stroke-grey-400 group-hover:stroke-blue-800"
               />
               <path
                 d="M5.625 2.1875L8.4375 5L5.625 7.8125"
-                stroke-width="1.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="stroke-grey-400 group-hover:stroke-blue-800"
               />
             </svg>

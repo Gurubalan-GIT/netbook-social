@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 const { fontFamily } = defaultTheme;
-const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
@@ -46,14 +45,6 @@ module.exports = {
       sans: ["Inter", ...fontFamily.sans],
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    plugin(function ({ addVariant }) {
-      addVariant("optional", "&:optional");
-      addVariant("group-optional", ":merge(.group):optional &");
-      addVariant("peer-optional", ":merge(.peer):optional ~ &");
-    }),
-  ],
   corePlugins: {
     preflight: false,
   },
