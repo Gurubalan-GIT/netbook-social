@@ -35,3 +35,18 @@ export const featuresProvided = [
     name: "Share",
   },
 ];
+
+export const members = [
+  {
+    id: 1,
+    imageSrc: "/assets/images/achievements/member1.png",
+  },
+  {
+    id: 2,
+    imageSrc: "/assets/images/achievements/member2.png",
+  },
+  {
+    id: 3,
+    imageSrc: "/assets/images/achievements/member3.png",
+  },
+];

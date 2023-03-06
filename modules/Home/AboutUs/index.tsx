@@ -23,7 +23,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="w-1/2 flex items-center">
-        <div className="w-[270px] h-[368px] relative rounded-[14px] overflow-hidden">
+        <div className="min-w-[270px] w-[270px] h-[368px] relative rounded-[14px] overflow-hidden">
           <Image
             src="/assets/images/about-us/office.png"
             alt="office video"
