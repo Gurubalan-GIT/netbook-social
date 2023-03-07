@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariants = "primary" | "outlined" | "secondary";
+type ButtonVariants = "primary" | "outlined" | "secondary" | "icon";
 
-export type Props = {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode | null;
   variant?: ButtonVariants;
   className?: string;
-};
+}

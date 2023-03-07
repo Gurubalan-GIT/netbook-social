@@ -3,4 +3,13 @@
   height: 100vh;
   width: 100%;
   background: linear-gradient(311.76deg, #d4e7fe -15.24%, #ffffff 78.85%);
+  position: relative;
+  .heroImageContainer {
+    @media screen and (max-width: 976px) {
+      top: 50%;
+      left: 50%;
+      filter: brightness(90%);
+      opacity: 0.4;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 .navbar {
-  @apply h-[90px] flex justify-between w-full px-[135px] items-center fixed top-0 border-blue-800 border-[1px] border-solid border-opacity-10;
+  @apply h-[90px] flex justify-between w-full px-[20px] items-center fixed top-0 border-blue-800 border-[1px] border-solid border-opacity-10 xl:px-[100px] xxl:px-[135px];
   z-index: 99;
   .navLeft {
     display: flex;
@@ -9,6 +9,7 @@
       margin-left: 72px;
       display: flex;
       align-items: center;
+      @apply hidden lg:flex;
       ul {
         width: 100%;
         display: flex;
@@ -27,19 +28,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    input {
-      width: 105px;
-      border: unset;
-      border-bottom: 1px solid #e5e5e5;
-      margin-right: 40px;
-      background-color: unset;
-      outline: none;
-      padding: 4px;
-      ::placeholder {
-        color: #686868;
-        font-weight: 400;
-        font-size: 12px;
-      }
-    }
   }
 }

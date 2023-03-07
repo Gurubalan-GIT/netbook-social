@@ -4,7 +4,7 @@ import classes from "./Button.module.scss";
 import { Props } from "./types";
 
 const Button: FunctionComponent<Props> = (props) => {
-  const { children, className = "", variant } = props;
+  const { children, className = "", variant, ...rest } = props;
 
   const getVariantClass = () => {
     switch (variant) {
@@ -14,6 +14,8 @@ const Button: FunctionComponent<Props> = (props) => {
         return classes.btnSecondary;
       case "primary":
         return classes.btnPrimary;
+      case "icon":
+        return classes.btnIcon;
       default:
         return "";
     }
@@ -21,6 +23,7 @@ const Button: FunctionComponent<Props> = (props) => {
 
   return (
     <button
+      {...rest}
       className={classNames(getVariantClass(), classes.btnBase, className)}
     >
       {children}

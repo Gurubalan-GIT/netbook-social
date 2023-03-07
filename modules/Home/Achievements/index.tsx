@@ -7,8 +7,8 @@ import Image from "next/image";
 
 const Achievements = () => {
   return (
-    <SectionLayout className="h-[510px]">
-      <div className="w-3/5 flex">
+    <SectionLayout className="py-[20px] lg:py-0 min-h-[510px] flex flex-col-reverse lg:flex-row">
+      <div className="w-full justify-center lg:w-3/5 flex flex-wrap lg:flex-nowrap">
         <AchievementCard
           title="4.8 Rating"
           titleIcon={
@@ -39,7 +39,7 @@ const Achievements = () => {
               height={24}
             />
           }
-          description="More than 2 billion we people over countries use socibooks we to stay in touch with friends."
+          description="More than 2 billion we people over countries use Netbook we to stay in touch with friends."
           subTitle={
             <p className="text-[16px] font-normal text-grey-250 group-hover:font-medium">
               Best of <span className="text-blue-800 font-semibold">2021</span>{" "}
@@ -52,14 +52,13 @@ const Achievements = () => {
               alt="github"
               width={24}
               height={24}
-              className="mt-[4px]"
             />
           }
           outLinkLabel="Go To Awards"
           outLink="https://www.awwwards.com/"
         />
       </div>
-      <div className="w-2/5 flex flex-col">
+      <div className="w-full lg:w-2/5 flex flex-col">
         <p className="font-normal text-lg text-blue-800">Our Achievements</p>
         <h2 className="text-4xl text-blue-950 pt-[10px]">
           We are Connecting You To The Digital Life.

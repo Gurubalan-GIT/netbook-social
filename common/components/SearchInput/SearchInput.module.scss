@@ -1,0 +1,14 @@
+.searchInputContainer {
+  width: 105px;
+  border: unset;
+  border-bottom: 1px solid #e5e5e5;
+  margin-right: 40px;
+  background-color: unset;
+  outline: none;
+  padding: 4px;
+  ::placeholder {
+    color: #686868;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
