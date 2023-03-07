@@ -1,5 +1,6 @@
 .aboutUsContainer {
-  height: 672px;
+  min-height: 672px;
+  @apply flex-col py-[24px] lg:flex lg:flex-row lg:py-0;
   .featureContainer {
     .featureList {
       list-style: none;

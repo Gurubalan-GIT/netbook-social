@@ -15,7 +15,11 @@ const AchievementCard: FunctionComponent<Props> = (props) => {
     outLinkLabel,
   } = props;
   return (
-    <Link href={outLink!} referrerPolicy="no-referrer">
+    <Link
+      href={outLink!}
+      referrerPolicy="no-referrer"
+      className="mt-[24px] lg:mt-0"
+    >
       <div className={classNames(classes.achievementCardContainer, "group")}>
         {title && (
           <div className="flex items-center">

@@ -9,7 +9,7 @@ const SectionLayout: FunctionComponent<Props> = ({
   return (
     <div
       className={classNames(
-        "px-[135px] flex items-center justify-center",
+        "px-[40px] flex items-center justify-center xl:px-[100px] xxl:px-[135px]",
         className
       )}
     >
