@@ -1,23 +1,29 @@
-import { featuresProvided } from "@common/utils/constants";
+import { HomePageContext } from "@common/context/Home";
+import classNames from "classnames";
 import SectionLayout from "layouts/SectionLayout";
 import Image from "next/image";
+import { useContext } from "react";
 import classes from "./About.module.scss";
 const AboutUs = () => {
+  const { homePageData } = useContext(HomePageContext);
+  const { aboutSection } = homePageData;
+  console.log(aboutSection);
   return (
-    <SectionLayout className={classes.aboutUsContainer}>
+    <SectionLayout data-cy="about-section" className={classes.aboutUsContainer}>
       <div className="w-full lg:w-1/2  flex flex-col pr-[12px]">
-        <p className="font-normal text-lg text-blue-800">What is Netbook?</p>
+        <p className="font-normal text-lg text-blue-800">
+          {aboutSection?.subTitle}
+        </p>
         <h2 className="text-3xl sm:text-4xl text-blue-950 pt-[10px]">
-          Why Join Netbook Social Network?
+          {aboutSection?.title}
         </h2>
         <p className="pt-[16px] font-normal text-[16px] text-grey-300 leading-7">
-          Recent surveys have indicated that small businesses recognize the need
-          they have to connect with consumer.
+          {aboutSection?.description}
         </p>
         <div className={classes.featureContainer}>
           <ul className={classes.featureList}>
-            {featuresProvided.map((feature) => (
-              <li key={feature.id}>{feature.name}</li>
+            {aboutSection?.featuresOffered?.map((feature, featureIndex) => (
+              <li key={feature + featureIndex}>{feature}</li>
             ))}
           </ul>
         </div>
@@ -32,22 +38,24 @@ const AboutUs = () => {
           />
         </div>
         <div className="flex flex-col sm:pl-[28px]">
-          <div className="w-[200px] h-[183px] xl:w-[265px] xl:h-[238px] relative rounded-[14px] overflow-hidden mb-[24px]">
-            <Image
-              src="/assets/images/about-us/laptop.png"
-              alt="office video"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div className="w-[200px] h-[183px] xl:w-[265px] xl:h-[238px] relative rounded-[14px] overflow-hidden">
-            <Image
-              src="/assets/images/about-us/internet.png"
-              alt="office video"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+          {aboutSection?.featureImages?.map(
+            (featureImage, featureImageIndex) => (
+              <div
+                key={featureImage?.id}
+                className={classNames(
+                  "w-[200px] h-[183px] xl:w-[265px] xl:h-[238px] relative rounded-[14px] overflow-hidden",
+                  featureImageIndex === 0 && "mb-[24px]"
+                )}
+              >
+                <Image
+                  src={featureImage?.url}
+                  alt={"feature image" + featureImageIndex}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            )
+          )}
         </div>
       </div>
     </SectionLayout>

@@ -1,21 +1,24 @@
 import Button from "@common/components/Button";
 import Pill from "@common/components/Pill";
+import { HomePageContext } from "@common/context/Home";
 import classNames from "classnames";
 import SectionLayout from "layouts/SectionLayout";
 import Image from "next/image";
+import { useContext } from "react";
 import classes from "./Hero.module.scss";
 
 const Hero = () => {
+  const { homePageData } = useContext(HomePageContext);
+  const { heroSection } = homePageData;
   return (
-    <SectionLayout className={classes.heroContainer}>
+    <SectionLayout data-cy="hero-section" className={classes.heroContainer}>
       <div className="flex flex-col w-full lg:w-1/2 pr-[12px] z-10 lg:z-0">
-        <Pill>Netbook Community</Pill>
+        <Pill>{heroSection?.subTitle}</Pill>
         <h2 className="text-[38px] sm:text-[56px] text-blue-950 leading-[44px] sm:leading-[66px] py-[20px]">
-          Your Solutions For Community!
+          {heroSection?.title}
         </h2>
         <div className="text-[18px] font-normal">
-          More than 2 billion people in over countries use Netbook to stay in
-          touch with friends & family.
+          {heroSection?.description}
         </div>
         <div className="flex pt-[42px]">
           <Button variant="primary">Add More</Button>
@@ -31,13 +34,15 @@ const Hero = () => {
             classes.heroImageContainer
           )}
         >
-          <Image
-            src="/assets/vectors/hero.svg"
-            fill
-            style={{ objectFit: "contain" }}
-            alt="hero"
-            priority
-          />
+          {heroSection?.image?.url && (
+            <Image
+              src={heroSection?.image?.url}
+              fill
+              style={{ objectFit: "contain" }}
+              alt="hero"
+              priority
+            />
+          )}
         </div>
       </div>
     </SectionLayout>
