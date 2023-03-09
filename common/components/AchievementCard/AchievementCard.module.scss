@@ -15,4 +15,12 @@
     box-shadow: 0px 26px 49px rgba(146, 165, 184, 0.14);
     border: none;
   }
+  .subTitle {
+    padding-left: 16px;
+    p {
+      span {
+        @apply text-blue-800 font-semibold;
+      }
+    }
+  }
 }

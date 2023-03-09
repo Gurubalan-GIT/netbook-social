@@ -1,16 +1,19 @@
-import { navLinks } from "@common/utils/constants";
+import { HomePageContext } from "@common/context/Home";
+import { toSlug } from "@common/utils/helpers/global";
 import classNames from "classnames";
+import Image from "next/image";
 import Link from "next/link";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 import Button from "../Button";
 import SearchInput from "../SearchInput";
 import Sidebar from "../Sidebar";
-import NetbookLogo from "../Vectors/NetbookLogo";
 import classes from "./Navbar.module.scss";
 
 const Navbar: FunctionComponent = () => {
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { homePageData } = useContext(HomePageContext);
+  const { navbarSection } = homePageData;
 
   const toggleNavbarOnScroll = () => {
     if (window.scrollY >= 66) {
@@ -28,9 +31,17 @@ const Navbar: FunctionComponent = () => {
     setIsSidebarOpen((prevSidebarState) => !prevSidebarState);
 
   return (
-    <nav className={classNames(classes.navbar, isNavbarActive && "bg-white")}>
+    <nav
+      data-cy="navbar"
+      className={classNames(classes.navbar, isNavbarActive && "bg-white")}
+    >
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <Button className="flex md:hidden" onClick={toggleSidebar} variant="icon">
+      <Button
+        data-cy="sidebar-toggle-btn"
+        className="flex lg:hidden"
+        onClick={toggleSidebar}
+        variant="icon"
+      >
         <span className="flex [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-grey-250">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,22 +58,30 @@ const Navbar: FunctionComponent = () => {
         </span>
       </Button>
       <div className={classes.navLeft}>
-        <NetbookLogo />
+        {navbarSection?.logo?.url && (
+          <Image
+            src={navbarSection.logo.url}
+            width={143}
+            height={34}
+            alt="Netbook logo"
+            priority
+          />
+        )}
         <div className={classes.navLinks}>
           <ul>
-            {navLinks.map((navLink) => (
-              <li key={navLink.id}>
-                <Link href={navLink.outLink}>{navLink.name}</Link>
+            {navbarSection?.navbarLinks.map((navLink, navLinkIndex) => (
+              <li key={navLink + navLinkIndex}>
+                <Link href={encodeURIComponent(toSlug(navLink)!)}>
+                  {navLink}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
       <div className={classes.navRight}>
-        <SearchInput placeholder="Search items" customClass="hidden md:block" />
-        <Button className="hidden lg:flex" variant="primary">
-          Login
-        </Button>
+        <SearchInput placeholder="Search items" customClass="hidden lg:block" />
+        <Button variant="primary">Login</Button>
       </div>
     </nav>
   );

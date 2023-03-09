@@ -1,5 +1,5 @@
 .navbar {
-  @apply h-[90px] flex justify-between w-full px-[20px] items-center fixed top-0 border-blue-800 border-[1px] border-solid border-opacity-10 xl:px-[100px] xxl:px-[135px];
+  @apply h-[90px] flex justify-between w-full px-[20px] items-center fixed top-0 border-blue-800 border-b-[1px] border-l-0 border-t-0 border-r-0 border-solid border-opacity-10 xl:px-[100px] xxl:px-[135px];
   z-index: 99;
   .navLeft {
     display: flex;

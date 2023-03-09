@@ -41,6 +41,6 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["tailwindcss"],
+  "cSpell.words": ["MACBOOK", "tailwindcss"],
   "scss.lint.unknownAtRules": "ignore"
 }

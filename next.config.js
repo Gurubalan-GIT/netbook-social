@@ -8,6 +8,10 @@ module.exports = {
       { loader: "@next/font/google", options: { subsets: ["latin"] } },
     ],
   },
+  images: {
+    domains: ["media.graphassets.com"],
+    dangerouslyAllowSVG: true,
+  },
   async headers() {
     return [
       {

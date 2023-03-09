@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { FunctionComponent } from "react";
+import MDXClient from "../MDXClient";
 import classes from "./AchievementCard.module.scss";
 import { Props } from "./types";
 
@@ -19,6 +20,8 @@ const AchievementCard: FunctionComponent<Props> = (props) => {
       href={outLink!}
       referrerPolicy="no-referrer"
       className="mt-[24px] lg:mt-0"
+      target="_blank"
+      data-cy="achievement-card"
     >
       <div className={classNames(classes.achievementCardContainer, "group")}>
         {title && (
@@ -30,7 +33,9 @@ const AchievementCard: FunctionComponent<Props> = (props) => {
         {subTitle && (
           <div className="flex items-center pt-[40px]">
             <div className={classes.subTitleIcon}>{subTitleIcon}</div>
-            <div className="pl-[16px]">{subTitle}</div>
+            <div className={classes.subTitle}>
+              <MDXClient content={subTitle} />
+            </div>
           </div>
         )}
         {description && (
