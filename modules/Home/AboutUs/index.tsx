@@ -7,7 +7,6 @@ import classes from "./About.module.scss";
 const AboutUs = () => {
   const { homePageData } = useContext(HomePageContext);
   const { aboutSection } = homePageData;
-  console.log(aboutSection);
   return (
     <SectionLayout data-cy="about-section" className={classes.aboutUsContainer}>
       <div className="w-full lg:w-1/2  flex flex-col pr-[12px]">

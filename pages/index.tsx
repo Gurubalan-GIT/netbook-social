@@ -1,5 +1,6 @@
 import { HomePageContext } from "@common/context/Home";
-import { gqlFetch } from "@common/utils/lib/gqlFetcher";
+import { gqlFetch } from "@common/lib/gqlFetcher";
+import { mdxToHtml } from "@common/lib/mdx";
 import Home from "@modules/Home";
 import { HomePageProps } from "@modules/Home/types";
 import { GET_HOME_PAGE_DATA } from "graphql/queries/home";
@@ -17,7 +18,16 @@ const HomePage: NextPage<HomePageProps> = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await gqlFetch(GET_HOME_PAGE_DATA);
+  const data: any = await gqlFetch(GET_HOME_PAGE_DATA);
+  if (data) {
+    const { achievementSection } = data;
+    achievementSection?.achievements?.forEach(
+      async (achievement: any, achievementIndex: number) => {
+        const { html } = await mdxToHtml(achievement?.subTitle);
+        data.achievementSection.achievements[achievementIndex].subTitle = html;
+      }
+    );
+  }
   return {
     props: {
       data,

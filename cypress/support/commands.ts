@@ -4,7 +4,6 @@
 Cypress.Commands.add("dataCy", (selector: string) => {
   return cy.get(`[data-cy="${selector}"]`);
 });
-
 declare global {
   namespace Cypress {
     interface Chainable {

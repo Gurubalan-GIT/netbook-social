@@ -10,6 +10,10 @@
   @media screen and (max-width: 1200px) {
     padding: 16px 30px;
   }
+  @media screen and (max-width: 380px) {
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
 }
 
 .btnPrimary {
