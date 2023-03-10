@@ -1,5 +1,9 @@
-.searchInputContainer {
+.searchWrapper {
   width: 105px;
+}
+
+.searchInputContainer {
+  width: 100%;
   border: unset;
   border-bottom: 1px solid #e5e5e5;
   margin-right: 40px;

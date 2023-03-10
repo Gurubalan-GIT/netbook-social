@@ -43,6 +43,10 @@ describe("E2E Tests on Home Page", () => {
       cy.get("@navbar").children().find("li").should("contain", `${navLink}`);
     });
 
+    cy.get("@navbar").children().find("input").type("Blog");
+
+    cy.dataCy("search-dropdown").should("be.visible").and("contain", "Blogs");
+
     cy.get("@navbar").children().find("button").contains("Login").click();
   });
 
@@ -61,6 +65,10 @@ describe("E2E Tests on Home Page", () => {
     navbarSection?.navbarLinks.forEach((navLink) => {
       cy.get("@sidebar").children().find("li").should("contain", `${navLink}`);
     });
+
+    cy.get("@sidebar").children().find("input").type("Blog");
+
+    cy.dataCy("search-dropdown").should("be.visible").and("contain", "Blogs");
 
     cy.dataCy("close-sidebar-btn").click();
 

@@ -1,4 +1,15 @@
+.sidebarSearchWrapper {
+  width: 100%;
+}
+
 .sidebarSearchInput {
   @apply border-none;
-  width: 100%;
+  border-radius: 8px;
+  height: 30px;
+  &::placeholder {
+    padding: 8px;
+  }
+  &:hover {
+    @apply bg-grey-100;
+  }
 }

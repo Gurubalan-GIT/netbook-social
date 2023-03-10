@@ -1,3 +1,5 @@
+import { URL } from "url";
+
 export interface SectionImage {
   id?: string;
   url: string;
@@ -8,9 +10,16 @@ export interface BaseSectionAttributes {
   description: string;
 }
 
+export interface Items {
+  id: string;
+  name: string;
+  outLink: URL;
+}
+
 export interface NavbarSection {
   logo: SectionImage;
   navbarLinks: Array<string>;
+  items: Array<Items>;
 }
 
 export interface HeroSection extends BaseSectionAttributes {

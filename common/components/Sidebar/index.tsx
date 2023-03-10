@@ -1,7 +1,8 @@
 import { HomePageContext } from "@common/context/Home";
+import useOnClickOutside from "@common/hooks/useOnClickOutside";
 import { toSlug } from "@common/utils/helpers/global";
 import Link from "next/link";
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext, useRef } from "react";
 import SearchInput from "../SearchInput";
 import classes from "./Sidebar.module.scss";
 import { Props } from "./types";
@@ -9,9 +10,14 @@ import { Props } from "./types";
 const Sidebar: FunctionComponent<Props> = ({ isOpen, toggleSidebar }) => {
   const { homePageData } = useContext(HomePageContext);
   const { navbarSection } = homePageData;
+  const sidebarRef = useRef(null);
+
+  useOnClickOutside(sidebarRef, () => toggleSidebar());
+
   return (
     isOpen && (
       <nav
+        ref={sidebarRef}
         data-cy="sidebar"
         className="flex flex-col justify-start lg:hidden bg-white shadow-lg px-[14px] py-[14px] items-center absolute w-[50%] h-screen top-0 left-0"
       >
@@ -35,12 +41,11 @@ const Sidebar: FunctionComponent<Props> = ({ isOpen, toggleSidebar }) => {
             />
           </svg>
         </div>
-        <div className="w-full py-[10px] my-[10px] bg-gray-100">
-          <SearchInput
-            placeholder="Search here"
-            customClass={classes.sidebarSearchInput}
-          />
-        </div>
+        <SearchInput
+          placeholder="Search here"
+          customClass={classes.sidebarSearchInput}
+          customWrapperClass={classes.sidebarSearchWrapper}
+        />
         <ul className="list-none w-full">
           {navbarSection?.navbarLinks.map((navLink, navLinkIndex) => (
             <li
