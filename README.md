@@ -43,6 +43,7 @@ This is pretty lean on external packages.
 - [x] Integrate the landing page with a CMS.
   - [GraphCMS](https://hygraph.com/)
   - [High Performance Read-only Content API](https://ap-south-1.cdn.hygraph.com/content/cleypepj50ho801td4t5we437/master)
+  - The API is based on GraphQL, you can use a sandbox such as [Apollo](https://studio.apollographql.com/sandbox/explorer/) to test it.
 - [x] Write tests to ensure CMS is working correctly.
   - Decision taken: Data driven tests, the e2e tests are done based on data from the CMS during test coverage.
 - [x] Implement a search bar that allows visitors to search for content on the landing page.
