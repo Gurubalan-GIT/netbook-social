@@ -31,6 +31,8 @@
     "eslint-config-next": "13.2.3",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-sonarjs": "^0.18.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.2.0",
     "next": "13.2.3",
     "next-mdx-remote": "^4.4.1",
     "next-secure-headers": "^2.2.0",

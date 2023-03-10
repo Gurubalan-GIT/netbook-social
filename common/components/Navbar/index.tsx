@@ -80,7 +80,14 @@ const Navbar: FunctionComponent = () => {
         </div>
       </div>
       <div className={classes.navRight}>
-        <SearchInput placeholder="Search items" customClass="hidden lg:block" />
+        <SearchInput
+          placeholder="Search items"
+          customClass={classes.navbarSearchInput}
+          customWrapperClass={classNames(
+            classes.navbarSearchWrapper,
+            "mr-[20px] hidden lg:block"
+          )}
+        />
         <Button variant="primary">Login</Button>
       </div>
     </nav>

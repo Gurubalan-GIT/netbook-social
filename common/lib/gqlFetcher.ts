@@ -1,7 +1,6 @@
 export const gqlFetch = async (query: any, variables = {}) => {
   const response = await fetch(process.env.NEXT_PUBLIC_GRAPH_CMS_ENDPOINT!, {
     method: "POST",
-    credentials: "include",
     body: JSON.stringify({
       query,
       variables,

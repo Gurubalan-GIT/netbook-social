@@ -28,5 +28,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .navbarSearchWrapper {
+      width: 200px;
+    }
+    .navbarSearchInput {
+      border-radius: 8px;
+      height: 30px;
+      &::placeholder {
+        padding: 8px;
+      }
+      &:hover {
+        @apply bg-grey-100;
+      }
+    }
   }
 }
