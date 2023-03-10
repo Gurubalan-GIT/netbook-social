@@ -28,14 +28,23 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="w-full pt-[30px] lg:pt-0 lg:w-1/2 flex flex-col sm:flex-row items-center justify-center">
-        <div className="w-[200px] h-[183px] sm:w-[170px] sm:h-[280px] mb-[24px] sm:mt-0 relative rounded-[14px] overflow-hidden xl:min-w-[270px] xl:w-[270px] xl:h-[370px]">
-          <Image
-            src="/assets/images/about-us/office.png"
-            alt="office video"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        </div>
+        {aboutSection?.featureVideoThumbnail.url && (
+          <div className="w-[200px] h-[183px] sm:w-[170px] sm:h-[280px] mb-[24px] sm:mt-0 relative rounded-[14px] overflow-hidden xl:min-w-[270px] xl:w-[270px] xl:h-[370px] flex items-center justify-center">
+            <Image
+              src="/assets/vectors/play.svg"
+              width={44}
+              height={44}
+              alt="play icon"
+              className="absolute z-[1]"
+            />
+            <Image
+              src={aboutSection.featureVideoThumbnail.url}
+              alt="office video"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        )}
         <div className="flex flex-col sm:pl-[28px]">
           {aboutSection?.featureImages?.map(
             (featureImage, featureImageIndex) => (

@@ -29,6 +29,7 @@ export interface HeroSection extends BaseSectionAttributes {
 export interface AboutSection extends BaseSectionAttributes {
   featuresOffered: Array<string>;
   featureImages: Array<SectionImage>;
+  featureVideoThumbnail: SectionImage;
 }
 
 export interface Achievement extends BaseSectionAttributes {
