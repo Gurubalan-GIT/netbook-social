@@ -10,6 +10,7 @@ A simple responsive landing page with data from Graph CMS and some complex compo
 - To lint and test the codebase with linters : `yarn test-all`
 - To open cypress : `yarn cypress:open`
 - To perform e2e tests with cypress : `yarn e2e`
+- To perform unit / component tests with cypress: `yarn component`
 
 ## Technical choices 
 
