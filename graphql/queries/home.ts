@@ -25,6 +25,9 @@ export const GET_HOME_PAGE_DATA = `
       subTitle
       id
       featuresOffered
+      featureVideoThumbnail {
+        url
+      }
     }
     achievementSection(where: {id: "clf0u4kfb0lha0bo75sw692oa"}) {
       subTitle
