@@ -33,6 +33,7 @@ This is pretty lean on external packages.
 - [next-secure-headers](https://www.npmjs.com/package/next-secure-headers) : This is present to handle CSPs of the webpage.
 - [graphql-request](https://www.npmjs.com/package/graphql-request) : Is present to enable syntax highlighting for graphql queries.
 - [classnames](https://www.npmjs.com/package/classnames) : To combine / merge classes conditionally.
+- For testing suites on e2e and Unit tests, I have gone ahead with [Cypress](https://www.cypress.io/).
 
 ## Feature / Task Coverage
 
