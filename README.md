@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Netbook Social
 
-## Getting Started
+A simple responsive landing page with data from Graph CMS and some complex components.
 
-First, run the development server:
+## Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Install dependecies with *yarn* : `yarn`
+- Run the development server : `yarn dev`
+- Run the production server : `yarn build && yarn start`
+- To lint and test the codebase with linters : `yarn test-all`
+- To open cypress : `yarn cypress:open`
+- To perform e2e tests with cypress : `yarn e2e`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Feature / Task Coverage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Base UI which is responsive across all browsers by using NextJS, Tailwind CSS, SASS. 
+- [x] Write e2e tests with 100% coverage for the application.
+- [x] Host the webpage on a cloud hosting platform. 
+  - [Here](https://netbook-social.vercel.app/)
+- [x] Integrate the landing page with a CMS. 
+  - [GraphCMS](https://hygraph.com/)
+  - [High Performance Read-only Content API](https://ap-south-1.cdn.hygraph.com/content/cleypepj50ho801td4t5we437/master)
+- [x] Write tests to ensure CMS is working correctly. 
+  - Decision taken: Data driven tests, the e2e tests are done based on data from the CMS during test coverage.
+- [x] Implement a search bar that allows visitors to search for content on the landing page. 
+  - Optimization of search results :
+      - Debouncing to rate limit API calls on key press.
+      - Memoization of search results to avoid recomputation / refetch results from the API.
+- [x] Write e2e tests to ensure that the search bar works as expected.
