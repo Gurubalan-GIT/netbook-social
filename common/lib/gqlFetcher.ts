@@ -8,7 +8,6 @@ export const gqlFetch = async (query: any, variables = {}) => {
   });
 
   if (!response.ok) {
-    console.log(response);
     throw new Error("Error in populating data.");
   }
 
