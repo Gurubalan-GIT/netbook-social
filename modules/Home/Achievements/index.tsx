@@ -1,6 +1,6 @@
 import AchievementCard from "@common/components/AchievementCard";
 import Button from "@common/components/Button";
-import MemberStack from "@common/components/ImageStack";
+import ImageStack from "@common/components/ImageStack";
 import { HomePageContext } from "@common/context/Home";
 import SectionLayout from "layouts/SectionLayout";
 import Image from "next/image";
@@ -30,7 +30,7 @@ const Achievements = () => {
             description={achievement.description}
             subTitle={achievement?.subTitle}
             subTitleIcon={
-              <MemberStack images={achievement.iconStack} imageSize={26} />
+              <ImageStack images={achievement.iconStack} imageSize={26} />
             }
             outLinkLabel={achievement?.outLinkLabel}
             outLink={achievement?.url}
