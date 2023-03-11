@@ -12,6 +12,17 @@ A simple responsive landing page with data from Graph CMS and some complex compo
 - To perform e2e tests with cypress : `yarn e2e`
 - To perform unit / component tests with cypress: `yarn component`
 
+## Architecture Decisions
+
+- I am following [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) ( Domain Driven Design ) as you can see under the [modules](./modules/) directory.
+- Shared / dependent logics are grouped under the [common](./common/) directory.
+
+## Key Methodologies Used
+
+- [Composition](https://reactjs.org/docs/composition-vs-inheritance.html) models, this can be seen with [Layouts](./layouts/) which saves re-rendering components such as Navbar and Footer for serveral pages.
+- [Context API](https://reactjs.org/docs/context.html) is used to avoid prop drilling specifically. I have not gone with Redux / state-management as that is not the goal here. Rather dependency injection methodologies which aims to share data is more performant and light weight here. You can refer this [here](./common/context/).
+- Custom hooks are encapsulated and written [here](./common/hooks/). This contains custom hooks such as `useOnClickOutside` which helps with closing modals / dropdowns when clicked outside it's DOM.
+
 ## Technical choices 
 
 Apart from the given spec, which is using Tailwind, Sass and React, some of the additional choices taken to aid the app were :
